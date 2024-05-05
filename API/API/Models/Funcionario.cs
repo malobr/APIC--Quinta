@@ -4,16 +4,19 @@ namespace API.Models;
 
 public class Funcionario
 {
+public Funcionario(){}
 
 
     public Funcionario(string nome, string cpf, string funcao){
-        
+    
+        Id = Guid.NewGuid().ToString();
         Nome = nome;
         Cpf = cpf;
         Funcao = funcao;
     }
 
 
+    public string Id { get; set; }
 
     [Required(ErrorMessage = "Este campo é obrigatório!")]
     public string? Nome {get; set;}

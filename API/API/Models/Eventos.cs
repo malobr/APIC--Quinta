@@ -4,19 +4,22 @@ namespace API.Models;
 
 public class Eventos
 {
+public Eventos(){}
 
 
     public Eventos(string nomeDoEvento, string organizacao, string local, string estiloMusical){
         
+        Id = Guid.NewGuid().ToString();
         Nome = nomeDoEvento;
         Organizacao = organizacao;
         Local = local;
         EstiloMusical = estiloMusical;
     }
 
-
+    public string Id { get; set; }
 
     [Required(ErrorMessage = "O nome do evento é obrigatório!")]
+
     public string? Nome {get; set;}
     [Required(ErrorMessage = "A organizacao e obrigatoria")]
     
