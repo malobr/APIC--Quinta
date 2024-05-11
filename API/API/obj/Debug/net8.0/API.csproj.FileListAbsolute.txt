@@ -120,3 +120,4 @@ C:\Users\marce\OneDrive\Desktop\Balada-API\API\API\obj\Debug\net8.0\refint\API.d
 C:\Users\marce\OneDrive\Desktop\Balada-API\API\API\obj\Debug\net8.0\API.pdb
 C:\Users\marce\OneDrive\Desktop\Balada-API\API\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\marce\OneDrive\Desktop\Balada-API\API\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\marce\OneDrive\Desktop\Balada-API\API\API\obj\Debug\net8.0\API.sourcelink.json
