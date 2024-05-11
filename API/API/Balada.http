@@ -1,0 +1,35 @@
+### Raiz da aplicação
+GET http://localhost:5096/
+
+
+### Cadastro de Clientes
+POST http://localhost:5096/cliente/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Marcelus",
+    "cpf" : "12345678991",
+    "vip" : true
+}
+
+### cadastro de Funcionarios
+POST http://localhost:5096/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Francisco",
+    "cpf" : "98765432101",
+    "funcao" : "Barista"
+}
+
+### cadastro de Eventos
+POST http://localhost:5096/eventos/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Rock IHatePrograming",
+    "organizacao" : "Universidade Positivo",
+    "local" : "Opera de Arame",
+    "estiloMusical" : "Rock"
+}
+
