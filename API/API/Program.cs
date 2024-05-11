@@ -12,7 +12,7 @@ var app = builder.Build();
 app.MapGet("/", () => "API Gerenciadora de Balada");
 
 
-
+//COMECO CADASTRAR
 // POST: http://localhost:5096/cliente/cadastrar
 app.MapPost("/cliente/cadastrar", ([FromBody] Cliente c, [FromServices] AppDataContext ctx) => {
     
@@ -70,10 +70,10 @@ app.MapPost("/eventos/cadastrar", ([FromBody] Eventos e, [FromServices] AppDataC
     return Results.BadRequest("Este Evento já está no sistema!");
 
 });
+//FIM CADASTRAR
 
 
-
-
+//COMECO LISTAR
 // GET: http://localhost:5096/cliente/listar
 app.MapGet("/cliente/listar", ([FromServices] AppDataContext ctx) => {
 
@@ -104,11 +104,11 @@ app.MapGet("/eventos/listar", ([FromServices] AppDataContext ctx) => {
     }
         return Results.BadRequest("Aguardando eventos...");
 });
+//FIM LISTAR
 
 
-
-
-//Exclusão de clientes, funcionarios e eventos
+//COMECO DELETAR
+// DELETE: http://localhost:5096/cliente/excluir/id
 app.MapDelete("/cliente/excluir/{id}", ([FromRoute] string id, [FromServices] AppDataContext ctx) => {
 
     Cliente? c = ctx.tabClientes.FirstOrDefault(x => x.Id == id);
@@ -122,7 +122,8 @@ app.MapDelete("/cliente/excluir/{id}", ([FromRoute] string id, [FromServices] Ap
 
 });
 
-//
+
+// DELETE: http://localhost:5096/funcionario/excluir/id
 app.MapDelete("/funcionario/excluir/{id}", ([FromRoute] string id, [FromServices] AppDataContext ctx) => {
 
     Funcionario? f = ctx.tabFuncionarios.FirstOrDefault(x => x.Id == id);
@@ -135,7 +136,7 @@ app.MapDelete("/funcionario/excluir/{id}", ([FromRoute] string id, [FromServices
         return Results.Ok("Funcionário deletado!");
 });
 
-//
+// DELETE: http://localhost:5096/eventos/excluir/id
 app.MapDelete("/eventos/excluir/{id}", ([FromRoute] string id, [FromServices] AppDataContext ctx) => {
 
     Eventos? e = ctx.tabEventos.FirstOrDefault(x => x.Id == id);
@@ -147,5 +148,72 @@ app.MapDelete("/eventos/excluir/{id}", ([FromRoute] string id, [FromServices] Ap
     return Results.Ok("Evento deletado!");
 
 });
+//FIM DELETAR
+
+//COMECO ALTERAR
+
+// PUT: http://localhost:5096/cliente/alterar/id
+app.MapPut("/cliente/alterar/{id}", ([FromRoute] string id,
+    [FromBody] Cliente clienteAlterado, [FromServices] AppDataContext ctx) =>
+{
+    Cliente? cliente = ctx.tabClientes.FirstOrDefault(x => x.Id == id);
+    //Cliente? cliente = ctx.tabClientes.Find(id);
+    if (cliente is null)
+    {
+        return Results.NotFound("Cliente não encontrado!");
+    }
+    cliente.Nome = clienteAlterado.Nome;
+    cliente.Cpf = clienteAlterado.Cpf;
+    cliente.Vip = clienteAlterado.Vip;
+    ctx.tabClientes.Update(cliente);
+    ctx.SaveChanges();
+    return Results.Ok("Informacoes do Cliente alteradas!");
+
+});
+
+
+// PUT: http://localhost:5096/funcionario/alterar/id
+app.MapPut("/funcionario/alterar/{id}", ([FromRoute] string id,
+    [FromBody] Funcionario funcionarioAlterado, [FromServices] AppDataContext ctx) =>
+{
+    Funcionario? funcionario = ctx.tabFuncionarios.FirstOrDefault(x => x.Id == id);
+    //Funcionario? funcionario = ctx.tabFuncionarios.Find(id);
+    if (funcionario is null)
+    {
+        return Results.NotFound("Funcionario não encontrado!");
+    }
+    funcionario.Nome = funcionarioAlterado.Nome;
+    funcionario.Cpf = funcionarioAlterado.Cpf;
+    funcionario.Funcao = funcionarioAlterado.Funcao;
+    ctx.tabFuncionarios.Update(funcionario);
+    ctx.SaveChanges();
+    return Results.Ok("Informacoes do Funcionario alteradas!");
+
+});
+
+
+// PUT: http://localhost:5096/eventos/alterar/id
+app.MapPut("/eventos/alterar/{id}", ([FromRoute] string id,
+    [FromBody] Eventos eventosAlterado, [FromServices] AppDataContext ctx) =>
+{
+    Eventos? eventos = ctx.tabEventos.FirstOrDefault(x => x.Id == id);
+    //Eventos? eventos = ctx.tabEventos.Find(id);
+    if (eventos is null)
+    {
+        return Results.NotFound("Evento não encontrado!");
+    }
+    eventos.Nome = eventosAlterado.Nome;
+    eventos.Organizacao = eventosAlterado.Organizacao;
+    eventos.Local = eventosAlterado.Local;
+    eventos.EstiloMusical = eventosAlterado.EstiloMusical;
+    ctx.tabEventos.Update(eventos);
+    ctx.SaveChanges();
+    return Results.Ok("Informacoes do Evento alteradas!");
+
+});
+
+
+//FIM ALTERAR
+
 
 app.Run();

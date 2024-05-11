@@ -9,8 +9,8 @@ POST http://localhost:5096/cliente/cadastrar
 Content-Type: application/json
 
 {
-    "nome" : "Marcelus",
-    "cpf" : "12345678991",
+    "nome" : "Marcelo",
+    "cpf" : "12345678901",
     "vip" : true
 }
 
@@ -51,4 +51,51 @@ GET http://localhost:5096/eventos/listar
 
 ### FIM Listagens
 
+### Comeco exclusoes
+
+### Excluir Cliente
+DELETE http://localhost:5096/cliente/excluir/f5e12824-f783-4450-a025-0160ae0e1d8c
+
+### Excluir Funcionario
+DELETE http://localhost:5096/funcionario/excluir/id
+
+### Excluir Evento
+DELETE http://localhost:5096/eventos/excluir/id
+
+### FIM exclusoes 
+
+### Comeco Alterar
+
+
+### Alterar Cliente
+POST http://localhost:5096/cliente/alterar/0e717deb-4100-429b-90e7-aa646549f1d4
+Content-Type: application/json  
+
+{
+    "nome" : "Fanfarrao",
+    "cpf" : "11223344556",  
+    "vip" : false  //false or true
+}// sempre deixar um espaco entre o content-type e o json....
+
+### Alterar Funcionario
+POST http://localhost:5096/funcionario/alterar/354a28a5-1f48-4bc4-88f9-8793afcd5eaa
+Content-Type: application/json  
+
+{
+    "nome" : "Vladimiro Putin",
+    "cpf" : "99999999999",  
+    "funcao" : "Hahaha"  
+}
+
+### Alterar Evento
+POST http://localhost:5096/eventos/alterar/354a28a5-1f48-4bc4-88f9-8793afcd5eaa
+Content-Type: application/json  
+
+{
+    "nome" : "Baladao do Fanfarrao",
+    "organizacao" : "Barriguinha's Music",  
+    "Local" : "Praca Osorio",
+    "estiloMusical" : "Horrivel"
+}
+### Fim Alterar
 
