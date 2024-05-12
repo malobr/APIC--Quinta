@@ -52,6 +52,9 @@ GET http://localhost:5096/funcionario/listar
 ### Listagem de Eventos
 GET http://localhost:5096/eventos/listar
 
+### Listagem de todos os cadastros
+GET http://localhost:5096/listar-todos
+
 ### FIM Listagens
 
 ### Comeco exclusoes

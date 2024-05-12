@@ -104,6 +104,17 @@ app.MapGet("/eventos/listar", ([FromServices] AppDataContext ctx) => {
     }
         return Results.BadRequest("Aguardando eventos...");
 });
+
+// GET: http://localhost:5096/listar-todos
+app.MapGet("/listar-todos", ([FromServices] AppDataContext ctx) => {
+    var todosOsRecursos = new {
+        Clientes = ctx.tabClientes.ToList(),
+        Funcionarios = ctx.tabFuncionarios.ToList(),
+        Eventos = ctx.tabEventos.ToList()
+    };
+
+    return Results.Ok(todosOsRecursos);
+});
 //FIM LISTAR
 
 
@@ -214,6 +225,7 @@ app.MapPut("/eventos/alterar/{id}", ([FromRoute] string id,
 
 
 //FIM ALTERAR
+
 
 
 app.Run();
