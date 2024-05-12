@@ -9,6 +9,7 @@ POST http://localhost:5096/cliente/cadastrar
 Content-Type: application/json
 
 {
+    "tipo" : "----CLIENTE----",
     "nome" : "Marcelo",
     "cpf" : "12345678901",
     "vip" : true
@@ -19,6 +20,7 @@ POST http://localhost:5096/funcionario/cadastrar
 Content-Type: application/json
 
 {
+    "tipo" : "----FUNCIONARIO----",
     "nome" : "Francisco",
     "cpf" : "98765432101",
     "funcao" : "Barista"
@@ -29,6 +31,7 @@ POST http://localhost:5096/eventos/cadastrar
 Content-Type: application/json
 
 {
+    "tipo" : "----EVENTO----",
     "nome" : "Rock IHatePrograming",
     "organizacao" : "Universidade Positivo",
     "local" : "Opera de Arame",
@@ -54,7 +57,7 @@ GET http://localhost:5096/eventos/listar
 ### Comeco exclusoes
 
 ### Excluir Cliente
-DELETE http://localhost:5096/cliente/excluir/f5e12824-f783-4450-a025-0160ae0e1d8c
+DELETE http://localhost:5096/cliente/excluir/adc0e42b-c5fa-4c63-a606-b0b602ade159
 
 ### Excluir Funcionario
 DELETE http://localhost:5096/funcionario/excluir/id

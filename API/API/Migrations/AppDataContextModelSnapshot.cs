@@ -17,7 +17,6 @@ namespace API.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.4");
 
-//CLIENTES
             modelBuilder.Entity("API.Models.Cliente", b =>
                 {
                     b.Property<string>("Id")
@@ -29,6 +28,9 @@ namespace API.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Tipo")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool?>("Vip")
                         .HasColumnType("INTEGER");
 
@@ -37,7 +39,6 @@ namespace API.Migrations
                     b.ToTable("tabClientes");
                 });
 
-//EVENTOS
             modelBuilder.Entity("API.Models.Eventos", b =>
                 {
                     b.Property<string>("Id")
@@ -59,12 +60,14 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Tipo")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("tabEventos");
                 });
 
-//FUNCIONARIOS
             modelBuilder.Entity("API.Models.Funcionario", b =>
                 {
                     b.Property<string>("Id")
@@ -77,6 +80,9 @@ namespace API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tipo")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

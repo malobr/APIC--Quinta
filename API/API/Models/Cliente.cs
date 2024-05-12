@@ -8,8 +8,8 @@ public Cliente(){
     Id = Guid.NewGuid().ToString();
 }
 
-
-    public string Id { get; set; }
+    public string? Tipo {get; set;}
+    public string? Id { get; set; }
     public string? Nome {get; set;}
 
     public string? Cpf {get; set;}

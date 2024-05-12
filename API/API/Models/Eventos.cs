@@ -8,7 +8,10 @@ public Eventos(){
     Id = Guid.NewGuid().ToString();
 }
 
-public string Id { get; set; }
+
+    public string? Tipo {get; set;}
+
+    public string? Id { get; set; }
 
     [Required(ErrorMessage = "O nome do evento é obrigatório!")]
 
