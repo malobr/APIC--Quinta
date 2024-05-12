@@ -23,7 +23,7 @@ Content-Type: application/json
     "tipo" : "----FUNCIONARIO----",
     "nome" : "Francisco",
     "cpf" : "98765432101",
-    "funcao" : "Barista"
+    "funcao" : "Bartender"
 }
 
 ### cadastro de Eventos

@@ -24,7 +24,7 @@ public Eventos(){
     [Required(ErrorMessage = "O estilo musical é obrigatório")]
     public string? EstiloMusical {get; set;}
 
-    public Funcionario? Funcionario {get; set;}//Relacao entre as classes e tabelas...
+    
 
 
 

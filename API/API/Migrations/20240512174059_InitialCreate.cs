@@ -26,21 +26,6 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "tabFuncionarios",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Tipo = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Cpf = table.Column<string>(type: "TEXT", nullable: true),
-                    Funcao = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tabFuncionarios", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "tabEventos",
                 columns: table => new
                 {
@@ -49,23 +34,38 @@ namespace API.Migrations
                     Nome = table.Column<string>(type: "TEXT", nullable: false),
                     Organizacao = table.Column<string>(type: "TEXT", nullable: false),
                     Local = table.Column<string>(type: "TEXT", nullable: false),
-                    EstiloMusical = table.Column<string>(type: "TEXT", nullable: false),
-                    FuncionarioId = table.Column<string>(type: "TEXT", nullable: true)
+                    EstiloMusical = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tabEventos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "tabFuncionarios",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Tipo = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Cpf = table.Column<string>(type: "TEXT", nullable: true),
+                    Funcao = table.Column<string>(type: "TEXT", nullable: true),
+                    EventosId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tabFuncionarios", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_tabEventos_tabFuncionarios_FuncionarioId",
-                        column: x => x.FuncionarioId,
-                        principalTable: "tabFuncionarios",
+                        name: "FK_tabFuncionarios_tabEventos_EventosId",
+                        column: x => x.EventosId,
+                        principalTable: "tabEventos",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_tabEventos_FuncionarioId",
-                table: "tabEventos",
-                column: "FuncionarioId");
+                name: "IX_tabFuncionarios_EventosId",
+                table: "tabFuncionarios",
+                column: "EventosId");
         }
 
         /// <inheritdoc />
@@ -75,10 +75,10 @@ namespace API.Migrations
                 name: "tabClientes");
 
             migrationBuilder.DropTable(
-                name: "tabEventos");
+                name: "tabFuncionarios");
 
             migrationBuilder.DropTable(
-                name: "tabFuncionarios");
+                name: "tabEventos");
         }
     }
 }

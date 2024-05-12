@@ -16,5 +16,7 @@ public Funcionario(){
     public string? Cpf {get; set;}
     public string? Funcao {get; set;}
 
+    public Eventos? Eventos {get; set;}//Relacao entre as classes e tabelas...
+
 
 }
