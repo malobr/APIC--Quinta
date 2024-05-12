@@ -48,6 +48,9 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FuncionarioId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Local")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -64,6 +67,8 @@ namespace API.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FuncionarioId");
 
                     b.ToTable("tabEventos");
                 });
@@ -88,6 +93,15 @@ namespace API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("tabFuncionarios");
+                });
+
+            modelBuilder.Entity("API.Models.Eventos", b =>
+                {
+                    b.HasOne("API.Models.Funcionario", "Funcionario")
+                        .WithMany()
+                        .HasForeignKey("FuncionarioId");
+
+                    b.Navigation("Funcionario");
                 });
 #pragma warning restore 612, 618
         }
