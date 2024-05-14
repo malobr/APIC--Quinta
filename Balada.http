@@ -1,0 +1,111 @@
+### Raiz da aplicação
+GET http://localhost:5096/
+
+
+### Comeco CADASTROS
+
+### Cadastro de Clientes
+POST http://localhost:5096/cliente/cadastrar
+Content-Type: application/json
+
+{
+    "tipo" : "----CLIENTE----",
+    "nome" : "Gustavo",
+    "cpf" : "12345678909",
+    "vip" : false
+}
+
+### cadastro de Funcionarios
+POST http://localhost:5096/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "tipo" : "----FUNCIONARIO----",
+    "nome" : "ssaberto",
+    "cpf" : "99999999995",
+    "funcao" : "Gogoboy"
+}
+
+### cadastro de Eventos
+POST http://localhost:5096/eventos/cadastrar
+Content-Type: application/json
+
+{
+    "tipo" : "----EVENTO----",
+    "nome" : "Musical Idetested",
+    "organizacao" : "Universidade TuiuUnicesumarti",
+    "local" : "Chacara Santana",
+    "estiloMusical" : "Rock"
+}
+### FIM CADASTROS
+
+
+### Comeco Listagens
+
+
+### Listagem de Clientes
+GET http://localhost:5096/cliente/listar
+
+### Listagem de Funcionarios
+GET http://localhost:5096/funcionario/listar
+
+### Listagem de Eventos
+GET http://localhost:5096/eventos/listar
+
+### Listagem de todos os cadastros
+GET http://localhost:5096/listar-todos
+
+### FIM Listagens
+
+### Comeco exclusoes
+
+### Excluir Cliente
+DELETE http://localhost:5096/cliente/excluir/741fcb99-cc92-4287-a0b2-4aacd038e4c2
+
+### Excluir Funcionario
+DELETE http://localhost:5096/funcionario/excluir/d8234c71-61b5-4ba4-9d6c-81cd2ed71c42
+
+### Excluir Evento
+DELETE http://localhost:5096/eventos/excluir/dcbfdbbd-fcf7-47a6-ab18-d4c3fc4596a0
+
+### FIM exclusoes 
+
+### Comeco Alterar
+
+
+### Alterar Cliente
+PUT http://localhost:5096/cliente/alterar/36d56774-a787-4f0f-9b74-a2a74c7ef029
+Content-Type: application/json  
+
+{
+    "nome" : "Fanfarrao",
+    "cpf" : "11223344556",  
+    "vip" : false  //false or true
+}// sempre deixar um espaco entre o content-type e o json....
+
+### Alterar Funcionario
+PUT http://localhost:5096/funcionario/alterar/94368dc8-3581-4fe4-9c16-d00a0ae1eee4
+Content-Type: application/json  
+
+{
+    "nome" : "Vladimiro Putin",
+    "cpf" : "99999999999",  
+    "funcao" : "Hahaha"  
+}
+
+### Alterar Evento
+PUT http://localhost:5096/eventos/alterar/299b1304-c46a-4faf-aacb-1c18827d6273
+Content-Type: application/json  
+
+{
+    "nome" : "Baladao do Fanfarrao",
+    "organizacao" : "Barriguinha's Music",  
+    "Local" : "Praca Osorio",
+    "estiloMusical" : "Horrivel"
+}
+### Fim Alterar
+
+### Verificando VIP
+
+### Verificar se cliente é VIP
+GET http://localhost:5096/cliente/verificarVip/4b6a060b-9f30-40c6-bc55-f26c93badc49
