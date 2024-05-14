@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
     "tipo" : "----CLIENTE----",
-    "nome" : "Gustavo",
-    "cpf" : "12345678909",
+    "nome" : "Gabriel",
+    "cpf" : "02859219528",
     "vip" : false
 }
 
@@ -74,14 +74,17 @@ DELETE http://localhost:5096/eventos/excluir/dcbfdbbd-fcf7-47a6-ab18-d4c3fc4596a
 
 
 ### Alterar Cliente
-PUT http://localhost:5096/cliente/alterar/36d56774-a787-4f0f-9b74-a2a74c7ef029
+PUT http://localhost:5096/cliente/alterar/78e24b78-40c2-457f-8a17-5110e2d02040
 Content-Type: application/json  
 
 {
-    "nome" : "Fanfarrao",
-    "cpf" : "11223344556",  
-    "vip" : false  //false or true
-}// sempre deixar um espaco entre o content-type e o json....
+    "nome" : "Brian",
+    "cpf" : "12345678902",  
+    "vip" : true  
+}
+// JSON não pode ter comentários dentro do código se não da erro
+// VIP true or false
+// sempre deixar um espaco entre o content-type e o json....
 
 ### Alterar Funcionario
 PUT http://localhost:5096/funcionario/alterar/94368dc8-3581-4fe4-9c16-d00a0ae1eee4
@@ -94,18 +97,18 @@ Content-Type: application/json
 }
 
 ### Alterar Evento
-PUT http://localhost:5096/eventos/alterar/299b1304-c46a-4faf-aacb-1c18827d6273
+PUT http://localhost:5096/eventos/alterar/55951b5e-3bfa-478a-9d92-77aa3ef17c0a
 Content-Type: application/json  
 
 {
-    "nome" : "Baladao do Fanfarrao",
-    "organizacao" : "Barriguinha's Music",  
-    "Local" : "Praca Osorio",
-    "estiloMusical" : "Horrivel"
+    "nome" : "Milionário e José Rico",
+    "organizacao" : "Oficina de Música",  
+    "Local" : "Pedreira Paulo Leminski",
+    "estiloMusical" : "Modão"
 }
 ### Fim Alterar
 
 ### Verificando VIP
 
 ### Verificar se cliente é VIP
-GET http://localhost:5096/cliente/verificarVip/4b6a060b-9f30-40c6-bc55-f26c93badc49
+GET http://localhost:5096/cliente/verificarVip/ced6d94f-d3ef-455d-b23c-3eae88923366

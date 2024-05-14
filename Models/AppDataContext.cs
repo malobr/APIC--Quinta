@@ -6,7 +6,7 @@ namespace API.Models;
 public class AppDataContext : DbContext
 
 {
-    //Respresentacao das classes que vao virar tabelas no Banco de Dados
+    //Representacao das classes que irão virar tabelas no Banco de Dados
     public DbSet<Cliente> tabClientes { get; set; }//obrigatoriamente tem que ser public...
     public DbSet<Funcionario> tabFuncionarios { get; set; }
     public DbSet<Eventos> tabEventos { get; set; }
@@ -14,7 +14,7 @@ public class AppDataContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         //Configuracao da conexao com o Banco de Dados
-        optionsBuilder.UseSqlite("Data Source=Balada.db");//A parte verde ---(Data Source=Balada.db)--- e a string de conecao...
+        optionsBuilder.UseSqlite("Data Source=Balada.db");//A parte verde ---(Data Source=Balada.db)--- e a string de conexão...
 
     }
 

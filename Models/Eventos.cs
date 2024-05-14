@@ -8,7 +8,6 @@ public Eventos(){
     Id = Guid.NewGuid().ToString();
 }
 
-
     public string? Tipo {get; set;}
 
     public string? Id { get; set; }
