@@ -23,7 +23,7 @@ Content-Type: application/json
     "tipo" : "----FUNCIONARIO----",
     "nome" : "ssaberto",
     "cpf" : "99999999995",
-    "funcao" : "Gogoboy"
+    "funcao" : "Bartender"
 }
 
 ### cadastro de Eventos
@@ -74,12 +74,12 @@ DELETE http://localhost:5096/eventos/excluir/dcbfdbbd-fcf7-47a6-ab18-d4c3fc4596a
 
 
 ### Alterar Cliente
-PUT http://localhost:5096/cliente/alterar/78e24b78-40c2-457f-8a17-5110e2d02040
+PUT http://localhost:5096/cliente/alterar/1a76497f-f06b-4b01-802b-5fdefa0067e5
 Content-Type: application/json  
 
 {
-    "nome" : "Brian",
-    "cpf" : "12345678902",  
+    "nome" : "Joaquim",
+    "cpf" : "12524578905",  
     "vip" : true  
 }
 // JSON não pode ter comentários dentro do código se não da erro
@@ -87,13 +87,13 @@ Content-Type: application/json
 // sempre deixar um espaco entre o content-type e o json....
 
 ### Alterar Funcionario
-PUT http://localhost:5096/funcionario/alterar/94368dc8-3581-4fe4-9c16-d00a0ae1eee4
+PUT http://localhost:5096/funcionario/alterar/8549928f-454f-45f7-9e01-96699d55e67a
 Content-Type: application/json  
 
 {
-    "nome" : "Vladimiro Putin",
-    "cpf" : "99999999999",  
-    "funcao" : "Hahaha"  
+    "nome" : "Ricardo",
+    "cpf" : "98765432104",  
+    "funcao" : "Barman"  
 }
 
 ### Alterar Evento

@@ -2534,19 +2534,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Brian\\.nuget\\packages\\": {}
+    "C:\\Users\\snack\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brian\\Desktop\\C#\\APIC--Quinta\\API.csproj",
+      "projectUniqueName": "C:\\Users\\snack\\Desktop\\C#\\APIC--Quinta\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\Brian\\Desktop\\C#\\APIC--Quinta\\API.csproj",
-      "packagesPath": "C:\\Users\\Brian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brian\\Desktop\\C#\\APIC--Quinta\\obj\\",
+      "projectPath": "C:\\Users\\snack\\Desktop\\C#\\APIC--Quinta\\API.csproj",
+      "packagesPath": "C:\\Users\\snack\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\snack\\Desktop\\C#\\APIC--Quinta\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Brian\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\snack\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2605,7 +2605,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
