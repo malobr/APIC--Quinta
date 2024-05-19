@@ -257,6 +257,45 @@ app.MapGet("/cliente/verificarVip/{id}", ([FromRoute] string id, [FromServices] 
     }
 });
 
+    app.MapGet("/cliente/buscar/{Cpf}", ([FromRoute] string cpf, [FromServices] AppDataContext ctx) => {
+
+        Cliente? c = ctx.tabClientes.FirstOrDefault(x => x.Cpf == cpf);
+
+        if (c is null)
+        {
+            return Results.NotFound("CPF não encontrado...");
+        }
+
+        if (c.Vip is true)
+    {
+        var vantagensVip = new List<string>
+        {
+            "Acesso à área VIP",
+            "Descontos de 20% no bar",
+            "Atendimento preferencial",
+            "Entrada prioritária"
+        };
+
+        return Results.Ok(new 
+        {
+            Cliente = c,
+            Mensagem = $"O cliente {c.Nome} é VIP.",
+            Vantagens = vantagensVip
+        });
+    }
+    else
+    {
+        return Results.Ok(new 
+        {
+            Cliente = c,
+            Mensagem = $"O cliente {c.Nome} não é VIP."
+        });
+    }
+});
+
+
+
+
 
 
 app.Run();

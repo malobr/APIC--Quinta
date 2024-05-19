@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
     "tipo" : "----CLIENTE----",
-    "nome" : "Gabriel",
-    "cpf" : "02859219528",
+    "nome" : "Gabriel Arcanjo",
+    "cpf" : "02859219527",
     "vip" : false
 }
 
@@ -112,3 +112,6 @@ Content-Type: application/json
 
 ### Verificar se cliente é VIP
 GET http://localhost:5096/cliente/verificarVip/ced6d94f-d3ef-455d-b23c-3eae88923366
+
+### Buscar cliente
+GET http://localhost:5096/cliente/buscar/12345678901
